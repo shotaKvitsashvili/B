@@ -108,11 +108,8 @@ function menu() {
     document.getElementById("menu").classList.toggle("responsive-bg");
     document.getElementById("hidden-logo").classList.toggle("remove-logo");
 }
-
-
 function resp() {
     x = document.body.clientWidth;
-    console.log(x)
     if (x > 860) {
         document.getElementById("menu").classList.remove("hidden-menu");
         document.getElementById("menu").classList.remove("responsive-bg");
