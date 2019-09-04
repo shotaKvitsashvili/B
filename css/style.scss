@@ -83,7 +83,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
     width: 100%;
     z-index: 99;
     position: fixed;
@@ -98,6 +97,9 @@ header {
         width: 80px;
       }
     }
+    .responsive-bg{
+      background-color: #423939;
+    }
     .remove-logo{
       display: none !important;
     }
@@ -110,7 +112,7 @@ header {
       cursor: pointer;
       display: none;
       position: fixed;
-      top: 4%;
+      top: 3%;
       right: 10px;  
       @include desktop{
         display: block;
@@ -118,7 +120,6 @@ header {
     }
     .hidden-menu{
       width: 100%;
-      opacity: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -130,11 +131,12 @@ header {
       justify-content: space-between;
       align-items: center;
       margin: 0 auto;
-      transition: .3s;
+      transition: .25s ease-in-out;
       @include desktop{
         display: none;
       }
       li {
+        margin-left: 10px;
         a {
           color: $mainColor;
           font-size: 110%;

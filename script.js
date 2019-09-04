@@ -12,6 +12,7 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
     if (currentScrollPos > 0) {
+        console.log(currentScrollPos);
         nav.classList.add("scrolled");
         toTop.classList.add("toTop");
     }
@@ -64,45 +65,57 @@ document.getElementsByClassName('slider-controls')[0].addEventListener("mouselea
     auto = setInterval(autoMove, 5000);
 });
 // Tabs
-function show(tabName, tabButton){
+function show(tabName, tabButton) {
     var tab = document.getElementsByClassName("tab");
-    for(var i = 0; i< tab.length; i++){
+    for (var i = 0; i < tab.length; i++) {
         tab[i].style.display = 'none';
         tab[i].style.animation = 'fade .7s ease-in-out';
     }
     document.getElementById(tabName).style.display = 'flex';
     var j;
     var t = document.getElementsByClassName("tabbutton");
-    for(j = 0; j<t.length; j++){
+    for (j = 0; j < t.length; j++) {
         t[j].classList.remove('activebutton')
     }
     document.getElementById(tabButton).classList.add('activebutton');
 }
 // Picture modal
-function popUp(img){
+function popUp(img) {
     var modal = document.getElementById("modal");
     var modalImg = document.querySelector("#modal img");
     var body = document.querySelector("body");
-     var src = img.src;
+    var src = img.src;
     modal.style.display = "block";
     modalImg.src = src;
     body.style.zIndex = "0";
     body.classList.add("blur");
     body.style.overflow = "hidden";
     console.log(img);
-    }
-    function closeModal(){
-        var modal = document.getElementById("modal");
-        var modalImg = document.querySelector("#modal img");
-        var body = document.querySelector("body");
-        modal.style.display = "none";
-        body.classList.remove("blur");
-        body.style.overflow = "visible";        
-    }
-   
+}
+function closeModal() {
+    var modal = document.getElementById("modal");
+    var modalImg = document.querySelector("#modal img");
+    var body = document.querySelector("body");
+    modal.style.display = "none";
+    body.classList.remove("blur");
+    body.style.overflow = "visible";
+}
+
 // Responsive menu
-function menu(){
+var windowSize = document.body.clientWidth;
+function menu() {
     document.getElementById("menu").classList.toggle("hidden-menu");
+    document.getElementById("menu").classList.toggle("responsive-bg");
     document.getElementById("hidden-logo").classList.toggle("remove-logo");
 }
-//hidden logo disappear, main logo disappear
+
+
+function resp() {
+    x = document.body.clientWidth;
+    console.log(x)
+    if (x > 860) {
+        document.getElementById("menu").classList.remove("hidden-menu");
+        document.getElementById("menu").classList.remove("responsive-bg");
+        document.getElementById("hidden-logo").classList.remove("remove-logo");
+    }
+}
