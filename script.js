@@ -12,7 +12,6 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
     if (currentScrollPos > 0) {
-        console.log(currentScrollPos);
         nav.classList.add("scrolled");
         toTop.classList.add("toTop");
     }
@@ -90,7 +89,6 @@ function popUp(img) {
     body.style.zIndex = "0";
     body.classList.add("blur");
     body.style.overflow = "hidden";
-    console.log(img);
 }
 function closeModal() {
     var modal = document.getElementById("modal");
